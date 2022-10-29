@@ -11,7 +11,7 @@ setup(
     version="0.0.1",
     author="Ronaldo Nunes",
     author_email="projetoftnunes@gmail.com",
-    description="Pacote para comparação de duas faces",
+    description="Two face comparison pack",
     long_description=page_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Ronaldo-Nunes/Cursos/tree/main/Geracao-Tech-Unimed-BH-Ciencia-Dados/compare-faces-package",
