@@ -7,11 +7,11 @@ from face_recognition import face_distance
 def _encode_image(image):
     return face_encodings(image)[0]
 
-def _result_message(comparison_result, distance_images):
-    if comparison_result:
-        return f"Os rostos pertencem a mesma pessoa. Distância entra as faces: {distance_images}"
+def _result_message(comparison_result: list, distance_images):
+    if comparison_result[0] == True:
+        return f"Os rostos pertencem a mesma pessoa. Distância entre as faces: {distance_images}"
     else:
-        return f"Os rostos são de pessoas distintas. Distância entra as faces: {distance_images}"
+        return f"Os rostos são de pessoas distintas. Distância entre as faces: {distance_images}"
 
 def delimit_face(image):
     face_location = face_locations(image)[0]

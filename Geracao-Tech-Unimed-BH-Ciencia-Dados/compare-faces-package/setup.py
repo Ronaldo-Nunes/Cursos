@@ -14,7 +14,7 @@ setup(
     description="Pacote para comparação de duas faces",
     long_description=page_description,
     long_description_content_type="text/markdown",
-    url="my_github_repository_project_link"
+    url="https://github.com/Ronaldo-Nunes/Cursos/tree/main/Geracao-Tech-Unimed-BH-Ciencia-Dados/compare-faces-package",
     packages=find_packages(),
     install_requires=requirements,
     python_requires='>=3.8'
