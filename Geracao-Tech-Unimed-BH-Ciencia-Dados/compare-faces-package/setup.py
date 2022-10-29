@@ -7,7 +7,7 @@ with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 setup(
-    name="compare_faces",
+    name="face_picture_comparator",
     version="0.0.1",
     author="Ronaldo Nunes",
     author_email="projetoftnunes@gmail.com",
