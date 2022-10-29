@@ -8,10 +8,12 @@ def _encode_image(image):
     return face_encodings(image)[0]
 
 def _result_message(comparison_result: list, distance_images):
+    result_message = ""
     if comparison_result[0] == True:
-        return f"The faces belong to the same person. Distance between faces: {distance_images}"
+        result_message = f"The faces belong to the same person. Distance between faces: {distance_images}"
     else:
-        return f"The faces are of different people. Distance between faces: {distance_images}"
+        result_message = f"The faces are of different people. Distance between faces: {distance_images}"
+    return result_message.replace("[", "").replace("]", "")
 
 def delimit_face(image):
     face_location = face_locations(image)[0]

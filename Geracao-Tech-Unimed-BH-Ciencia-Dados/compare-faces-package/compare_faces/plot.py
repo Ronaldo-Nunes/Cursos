@@ -9,6 +9,7 @@ def plot_image(image):
 
 def plot_result(initial_image, image_compare, comparation_result: str):
     figure, axis = plt.subplots(nrows=1, ncols=2, figsize=(12, 12))
+    figure.suptitle(f'** {comparation_result} **' )
     list_images = [initial_image, image_compare]
     list_titles = ["Initial image", "Compare image"]
     for ax, title, image in zip(axis, list_titles, list_images):
@@ -16,7 +17,7 @@ def plot_result(initial_image, image_compare, comparation_result: str):
         ax.imshow(image, cmap="gray")
         ax.axis("off")
     figure.tight_layout()
-    plt.title(comparation_result)
+    figure.subplots_adjust(top=0.85)
     plt.show()
 
 
