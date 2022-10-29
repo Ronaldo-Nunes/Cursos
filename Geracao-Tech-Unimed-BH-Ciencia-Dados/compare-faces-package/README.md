@@ -3,6 +3,7 @@
 ## Description. 
 
 The package compare_faces is used to:
+
 	- Delimit face
 	- Confront faces
 	- Plot image
