@@ -21,21 +21,21 @@ pip install compare_faces
 ## Usage
 
 ```python
-from compare_faces import io
+from compare_faces import load_img
 
-image = io.load_image_file("my_image.jpg")
-image = io.delimit_face(image)
+image = load_img.get_image_file("my_image.jpg")
+image = load_img.delimit_face(image)
 
 # delimit_face returns an image with a rectangle delimiting the first face detected in the input image
 ```
 
 ```python
-from compare_faces import io
+from compare_faces import load_img
 from compare_faces import comparation
 from compare_faces import plot
 
-image = io.load_image_file("my_image.jpg")
-image_compare = io.load_image_file("other_image.jpg")
+image = load_img.get_image_file("my_image.jpg")
+image_compare = load_img.get_image_file("other_image.jpg")
 result_message = comparation.confront_faces(image, image_compare)
 
 # confront_image returns a string informing whether or not the faces belong to the same person and the distance between them
@@ -46,9 +46,9 @@ plot.plot_result(image, image_compare, result_message)
 ```
 
 ```python
-from compare_faces import io
+from compare_faces import load_img
 from compare_faces import plot
-image = io.load_image_file("my_image.jpg")
+image = load_img.get_image_file("my_image.jpg")
 plot.plot_image(image)
 
 # plot_image displays the image using matplotlib library
