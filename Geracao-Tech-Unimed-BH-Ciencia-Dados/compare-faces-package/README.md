@@ -1,8 +1,8 @@
-# compare_faces
+# face_picture_comparator
 
 ## Description. 
 
-The package compare_faces is used to:
+The package face_picture_comparator is used to:
 
 	- Delimit face
 	- Confront faces
@@ -12,16 +12,16 @@ The package compare_faces is used to:
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install compare_faces
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install face_picture_comparator
 
 ```bash
-pip install compare_faces
+pip install face_picture_comparator
 ```
 
 ## Usage
 
 ```python
-from compare_faces import load_img
+from face_picture_comparator import load_img
 
 image = load_img.get_image_file("my_image.jpg")
 image = load_img.delimit_face(image)
@@ -30,9 +30,9 @@ image = load_img.delimit_face(image)
 ```
 
 ```python
-from compare_faces import load_img
-from compare_faces import comparation
-from compare_faces import plot
+from face_picture_comparator import load_img
+from face_picture_comparator import comparation
+from face_picture_comparator import plot
 
 image = load_img.get_image_file("my_image.jpg")
 image_compare = load_img.get_image_file("other_image.jpg")
@@ -46,8 +46,8 @@ plot.plot_result(image, image_compare, result_message)
 ```
 
 ```python
-from compare_faces import load_img
-from compare_faces import plot
+from face_picture_comparator import load_img
+from face_picture_comparator import plot
 image = load_img.get_image_file("my_image.jpg")
 plot.plot_image(image)
 
