@@ -6,7 +6,7 @@ The package face_picture_comparator is used to:
 
 	- Delimit face
 	- Confront faces
-	- Result confront faces
+	- Confront faces message
 	- Plot image
 	- Plot result
 	- Get image file
