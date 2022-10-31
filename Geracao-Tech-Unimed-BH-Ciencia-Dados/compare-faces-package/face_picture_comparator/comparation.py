@@ -34,12 +34,3 @@ def confront_faces_message(initial_image, compare_image):
     distance = face_distance([init_img], comp_img)
     return _result_message(comparison, distance)
 
-
-import load_img
-image1 = load_img.get_image_file("E:\\Arquivos\Downloads\stark1.jpg")
-#image1 = delimit_face(image1)
-image2 = load_img.get_image_file("E:\\Arquivos\Downloads\stark2.jpg")
-#image2 = delimit_face(image2)
-
-print(confront_faces(image1, image2))
-
