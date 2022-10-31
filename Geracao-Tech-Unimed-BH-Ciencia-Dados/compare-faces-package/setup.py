@@ -8,7 +8,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="face_picture_comparator",
-    version="0.0.2",
+    version="0.0.3",
     author="Ronaldo Nunes",
     author_email="projetoftnunes@gmail.com",
     description="Two face comparison pack",

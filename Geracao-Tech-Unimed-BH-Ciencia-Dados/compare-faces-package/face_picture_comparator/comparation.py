@@ -23,6 +23,23 @@ def delimit_face(image):
 def confront_faces(initial_image, compare_image):
     init_img = _encode_image(initial_image)
     comp_img = _encode_image(compare_image)
+    comparison = compare_faces([init_img], comp_img)[0]
+    distance = face_distance([init_img], comp_img)[0]
+    return comparison, distance
+
+def confront_faces_message(initial_image, compare_image):
+    init_img = _encode_image(initial_image)
+    comp_img = _encode_image(compare_image)
     comparison = compare_faces([init_img], comp_img)
     distance = face_distance([init_img], comp_img)
     return _result_message(comparison, distance)
+
+
+import load_img
+image1 = load_img.get_image_file("E:\\Arquivos\Downloads\stark1.jpg")
+#image1 = delimit_face(image1)
+image2 = load_img.get_image_file("E:\\Arquivos\Downloads\stark2.jpg")
+#image2 = delimit_face(image2)
+
+print(confront_faces(image1, image2))
+
