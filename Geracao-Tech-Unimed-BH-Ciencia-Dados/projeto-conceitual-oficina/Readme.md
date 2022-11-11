@@ -1,6 +1,6 @@
-## Modelagem de um banco de dados para controle de Ordens de Serviço em uma oficina mecânica
+# Modelagem de um banco de dados para controle de Ordens de Serviço em uma oficina mecânica
 
-### Especificidades da Ordem de Serviço
+## Especificidades da Ordem de Serviço
 
 O requisitos relacionados À OS são:
 
