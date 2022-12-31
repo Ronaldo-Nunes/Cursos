@@ -11,7 +11,13 @@ class Pessoa {
     _nome = nome;
   }
 
-  String getNome() => _nome;
+  String getNome() {
+    if (_nome.isNotEmpty) {
+      return "${_nome[0].toUpperCase()}${_nome.substring(1).toLowerCase()}";
+    } else {
+      return _nome;
+    }
+  }
 
   void setPeso(double peso) {
     _peso = peso;
