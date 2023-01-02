@@ -1,3 +1,3 @@
-# A sample command-line application with an entrypoint in `bin/`, library code
+# Calculadora de IMC
 
-in `lib/`, and example unit test in `test/`.
+Pequena aplicação de console construída em Dart para calcular e classificar IMC. 
