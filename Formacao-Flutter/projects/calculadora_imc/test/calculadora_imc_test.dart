@@ -27,10 +27,9 @@ void main() {
       {'imc': 36.5}: 'OBESIDADE GRAU II (SEVERA)',
       {'imc': 40.1}: 'OBESIDADE GRAU III (MÓRBIDA)'
     };
-    valuesToTest.forEach((values, expected) {
-      test('Entrada: $values Esperado: $expected', () {
-        expect(
-            IMCService.classificarIMC(double.parse(values['imc'].toString())),
+    valuesToTest.forEach((value, expected) {
+      test('Entrada: $value Esperado: $expected', () {
+        expect(IMCService.classificarIMC(double.parse(value['imc'].toString())),
             equals(expected));
       });
     });
