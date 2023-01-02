@@ -1,46 +1,71 @@
+import 'dart:io';
+
+import 'package:calculadora_imc/exceptions/peso_exception.dart';
+import 'package:calculadora_imc/models/pessoa.dart';
+import 'package:calculadora_imc/service/imc_service.dart';
 import 'package:calculadora_imc/utils/console_utils.dart';
+
+import 'exceptions/altura_exception.dart';
 
 int calculate() {
   return 6 * 7;
 }
 
 void execute() {
-  print("Bem-vindo à Calculadora de IMC em Dart!!!");
+  print("\nBem-vindo à Calculadora de IMC em Dart!!!\n");
 
-  var nome = "";
+  String nome;
   do {
-    nome = ConsoleUtils.lerStringComMensagem("Informe seu nome: ");
-  } while (nome.isEmpty);
-}
+    nome = ConsoleUtils.lerStringComMensagem("## Informe seu nome: ");
+  } while (nome.trim().isEmpty);
 
-double calcularIMC(double peso, double altura) {
-  altura = altura / 100;
-  return (peso / (altura * altura)).roundToDouble();
-}
+  var pessoa = Pessoa(nome);
 
-String classificarIMC(double imc) {
-  if (imc < 16) {
-    return "magreza grave";
-  } else if (imc < 17) {
-    return "magreza moderada";
-  } else if (imc < 18.5) {
-    return "magreza leve";
-  } else if (imc < 25) {
-    return "saldável";
-  } else if (imc < 30) {
-    return "sobrepeso";
-  } else if (imc < 35) {
-    return "obesidade grau I";
-  } else if (imc < 40) {
-    return "obesidade grau II (severa)";
-  } else if (imc >= 40) {
-    return "obesidade grau III (mórbida)";
-  } else {
-    return "Intervalo não especificado";
+  double? peso;
+  do {
+    try {
+      peso = ConsoleUtils.lerDoubleComMensagemComSaida(
+          "## Informe o seu peso (EM KG) ou digite 'S' para sair: ", "S");
+      if (peso != null) {
+        if (peso <= 0 || peso > 600) {
+          throw PesoInvalidoException();
+        } else {
+          pessoa.setPeso(peso);
+        }
+      }
+    } on PesoInvalidoException {
+      print(PesoInvalidoException().message());
+      peso = null;
+    } catch (e) {
+      print(e);
+      exit(0);
+    }
+  } while (peso == null);
+
+  double? altura;
+  do {
+    try {
+      altura = ConsoleUtils.lerDoubleComMensagemComSaida(
+          "## Informe a sua altura (EM CENTÍMETROS) ou digite 'S' para sair: ",
+          "S");
+      if (altura != null) {
+        if (altura <= 50 || altura > 270) {
+          throw AlturaInvalidaException();
+        } else {
+          pessoa.setAltura(altura);
+        }
+      }
+    } on AlturaInvalidaException {
+      print(AlturaInvalidaException().message());
+      altura = null;
+    } catch (e) {
+      print(e);
+      exit(0);
+    }
+  } while (altura == null);
+
+  print("\n--> Valoles informados: $pessoa.");
+  if (pessoa.isFilled()) {
+    IMCService.exibirResultado(pessoa);
   }
-}
-
-void exibirResultado(String nome, double imc, String classificacaoIMC) {
-  print(
-      "$nome possui um IMC de ${imc.toStringAsFixed(1)}, o qual é classificado como $classificacaoIMC.");
 }

@@ -11,28 +11,20 @@ class ConsoleUtils {
     return stdin.readLineSync(encoding: utf8) ?? "";
   }
 
-  static double? lerDouble() {
-    var valor = lerString();
-    return double.tryParse(valor);
-  }
-
   static double? lerDoubleComMensagemComSaida(
       String mensagem, String valorSaida) {
     do {
+      String? value;
       try {
-        var value = lerStringComMensagem(mensagem);
-        if (value == valorSaida) {
-          return null;
+        value = lerStringComMensagem(mensagem);
+        if (value.toUpperCase() == valorSaida) {
+          exit(0);
         }
+        value = value.replaceAll(",", ".");
         return double.parse(value);
       } catch (e) {
-        stdout.write(mensagem);
+        print("O valor informado é inválido: $value");
       }
     } while (true);
-  }
-
-  static double? lerDoubleComMensagem(String mensagem) {
-    stdout.write(mensagem);
-    return lerDouble();
   }
 }

@@ -7,6 +7,15 @@ class Pessoa {
   double _peso = 0;
   double _altura = 0;
 
+  Pessoa(this._nome);
+
+  @override
+  String toString() {
+    return "Nome: ${getNome()}, peso: $_peso Kg, altura: $_altura cm";
+  }
+
+  bool isFilled() => _nome.isNotEmpty && _peso > 0 && _altura > 0;
+
   void setNome(String nome) {
     _nome = nome;
   }
