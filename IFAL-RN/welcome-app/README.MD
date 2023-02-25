@@ -2,6 +2,8 @@
 
 Trata-se de um aplicativo contruído em React Native e typescript, o qual tem por objetivo fixar os conteúdos explanados em sala.
 
+[Screenshot](images/app_image.jpg)
+
 ## Especificação
 
 1. O aplicativo deve exibir uma mensagem de boas vindas mediante o toque de um botão;
